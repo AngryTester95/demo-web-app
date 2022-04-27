@@ -3,6 +3,9 @@ image: Visual Studio 2022
 configuration:
   - Debug
 
+before_build:
+  - nuget restore
+
 build:
   project: src/Solution/Solution.sln
   verbosity: minimal
