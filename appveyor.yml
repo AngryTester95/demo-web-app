@@ -11,7 +11,5 @@ before_build:
 
 build:
   project: src/Solution/Solution.sln
+  publish_wap: true
   verbosity: minimal
-  
-after_build:
-  cmd: echo 'after build!'
