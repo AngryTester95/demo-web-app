@@ -8,4 +8,4 @@ configuration:
 
 
 build_script:
-  - cmd: dotnet build src/Solution/Solution.sln
+  - cmd: dotnet build
