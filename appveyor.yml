@@ -4,8 +4,7 @@ configuration:
   - Debug
 
 build:
-  project: src
-  publish_wap: true
+  project: src/Solution/Solution.sln
   verbosity: minimal
   
 after_build:
