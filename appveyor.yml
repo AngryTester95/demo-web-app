@@ -7,10 +7,10 @@ configuration:
   - Debug
 
 before_build:
-  - nuget restore %PROJECT%
+  - nuget restore src/Solution/Solution.sln
 
 build:
-  project: %PROJECT%
+  project: src/Solution/Solution.sln
   verbosity: minimal
   
 after_build:
