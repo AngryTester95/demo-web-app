@@ -1,16 +1,16 @@
 image: Visual Studio 2022
 
 environment:
-  project: 'src/Solution/Solution.sln'
+  PROJECT: 'src/Solution/Solution.sln'
 
 configuration:
   - Debug
 
 before_build:
-  - nuget restore $(project)
+  - nuget restore %PROJECT%
 
 build:
-  project: '$(project)'
+  project: %PROJECT%
   verbosity: minimal
   
 after_build:
