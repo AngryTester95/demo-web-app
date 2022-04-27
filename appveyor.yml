@@ -1,8 +1,11 @@
-configuration: Release
+image: Visual Studio 2019
 
-before_build:
-  - nuget restore
-  
-build:
-  verbosity: minimal
-  publish_wap: true
+install:
+  - dotnet tool install -g codecov.tool
+
+configuration:
+  - Release
+
+
+build_script:
+  - cmd: dotnet build src/Solution/Solution.sln
