@@ -7,10 +7,10 @@ configuration:
   - Debug
 
 before_build:
-  - nuget restore {project}
+  - nuget restore $(project)
 
 build:
-  project: '{project}'
+  project: $(project)
   verbosity: minimal
   
 after_build:
