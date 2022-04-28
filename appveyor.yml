@@ -1,15 +1,56 @@
+version: 1.1.{build}
+
+branches:
+  only:
+    - main
+    - develop
+  exept:
+    - /feature/
+    
+init:
+  - echo Hello init!
+  cmd: set FIRST_VAR=INSTALL
+  - echo %FIRST_VAR
+
 image: Visual Studio 2022
 
-environment:
-  PROJECT: 'src/Solution/Solution.sln'
+matrix:
+  fast_finish: true
+  allow_failures:
+    - platform: x86
+      configuration: Debug
+    - platform: x64
+      configuration: Release
 
+install:
+  - echo Hello from INIT
+  - echo set FIRST_VAR=%INIT"
+  - echo %FIRST_VAR%
+  
+platform:
+  - x86
+  - x64
+  
 configuration:
   - Debug
-
+  - Release
+  
 before_build:
+  - echo set FIRST_VAR=BEFORE_BUILD
+  - echo %FIRST_VAR%
   - nuget restore src/Solution/Solution.sln
+  
 
 build:
   project: src/Solution/Solution.sln
-  publish_wap: true
+  publish_azure: true
   verbosity: minimal
+  
+on_success:
+  - echo SUCCESS!
+  
+on_failure:
+  - echo FAILURE!
+  
+on_finish:
+  - echo FINISH!
