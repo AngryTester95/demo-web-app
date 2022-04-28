@@ -40,7 +40,7 @@ build:
   verbosity: minimal
   
 artifacts:
-  - path: src/Solution/Web/bin/$(configuration)
+  - path: src/Solution/Web/bin/$(configuration)/net5.0
     name: web-app
   
 on_success:
