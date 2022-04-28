@@ -39,6 +39,10 @@ build:
   publish_azure: true
   verbosity: minimal
   
+artifacts:
+  - path: src/Solution/Web/bin/$(configuration)
+    name: web-app
+  
 on_success:
   - echo SUCCESS!
   
