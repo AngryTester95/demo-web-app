@@ -9,7 +9,7 @@ branches:
     
 init:
   - echo Hello init!
-  cmd: set FIRST_VAR=INSTALL
+  - cmd: set FIRST_VAR=INSTALL
   - echo %FIRST_VAR
 
 image: Visual Studio 2022
